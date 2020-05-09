@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
 
   s.executables << 'train'
-  s.files       = ["lib/ghost_train.rb"]
+  s.files       = Dir["lib/**/*"]
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/thutterer/ghost_train/issues",
@@ -22,4 +22,8 @@ Gem::Specification.new do |s|
     "documentation_uri" => "https://github.com/thutterer/ghost_train/tree/v#{version}/README.md",
     "source_code_uri"   => "https://github.com/thutterer/ghost_train/tree/v#{version}",
   }
+
+  s.add_runtime_dependency "rails", "~> 6.0"
+  s.add_runtime_dependency "puma", "~> 4.1"
+  s.add_runtime_dependency "bootsnap", "~> 1.4", ">= 1.4.2"
 end
