@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+version = File.read(File.expand_path("VERSION", __dir__)).strip
+
 Gem::Specification.new do |s|
   s.name        = "ghost_train"
-  s.version     = "0.0.1"
+  s.version     = version
   s.date        = "2020-05-09"
   s.summary     = "All aboard!"
   s.description = "I could've just used a ghost train."
@@ -11,4 +15,11 @@ Gem::Specification.new do |s|
 
   s.executables << 'train'
   s.files       = ["lib/ghost_train.rb"]
+
+  s.metadata = {
+    "bug_tracker_uri"   => "https://github.com/thutterer/ghost_train/issues",
+    "changelog_uri"     => "https://github.com/thutterer/ghost_train/releases/tag/v#{version}",
+    "documentation_uri" => "https://github.com/thutterer/ghost_train/tree/v#{version}/README.md",
+    "source_code_uri"   => "https://github.com/thutterer/ghost_train/tree/v#{version}",
+  }
 end
