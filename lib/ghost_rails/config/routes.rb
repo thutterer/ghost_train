@@ -1,3 +1,3 @@
-Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+# Provide the absolute path to your application's config folder as an ENV var.
+
+require File.join(ENV["CONFIG_DIR"], "routes.rb") if ENV["CONFIG_DIR"].present?

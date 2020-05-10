@@ -4,8 +4,12 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-# Bundler.require(*Rails.groups)
+Bundler.require(*Rails.groups)
 require 'puma'
+require 'sqlite3' # TODO: Use PostgreSQL
+require "sass-rails"
+require "sprockets" if Rails.env.development?
+
 
 module GhostRails
   class Application < Rails::Application

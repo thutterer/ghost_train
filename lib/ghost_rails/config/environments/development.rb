@@ -50,6 +50,10 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # TODO: I only added this to postpone making Sprockets 4 manifest files play
+  # nice with engines the way I currently try to use them.
+  config.assets.check_precompiled_asset = false
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
@@ -58,5 +62,5 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
