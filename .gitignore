@@ -1,0 +1,5 @@
+node_modules
+tmp
+.byebug_history
+*.gem
+*.log
