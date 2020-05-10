@@ -9,7 +9,7 @@ require 'puma'
 require 'sqlite3' # TODO: Use PostgreSQL
 require "sass-rails"
 require "sprockets" if Rails.env.development?
-
+require "devise"
 
 module GhostRails
   class Application < Rails::Application
