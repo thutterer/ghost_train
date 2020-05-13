@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rails", "~> 6.0"
   s.add_runtime_dependency "puma", "~> 4.1"
   s.add_runtime_dependency "bootsnap", "~> 1.4", ">= 1.4.2"
-  s.add_runtime_dependency "sqlite3", "~> 1.4"
+  s.add_runtime_dependency "pg", "~> 1.2"
   s.add_runtime_dependency "sass-rails", "~> 6.0"
   s.add_runtime_dependency "devise", "~> 4.7"
   s.add_runtime_dependency "webpacker", "~> 4.0"

@@ -1,0 +1,36 @@
+<%- content_for(:title) do %>
+  My account
+<% end %>
+
+<section>
+  <header>
+    <h2>
+      <%= yield :title %>
+    </h2>
+
+    <p>
+      <%- if current_user %>
+        <%= current_user.email %>
+
+      <%- elsif defined? new_user_session_url %>
+        <%= link_to "Sign In", new_user_session_url %>
+      <% end %>
+    </p>
+
+    <%- if current_user %>
+    <p>
+      <%= link_to edit_user_registration_url do %>
+        <em>Change email</em>
+      <% end %>
+
+      <%= link_to edit_user_password_url do %>
+        <em>Change password</em>
+      <% end %>
+
+      <%= link_to destroy_user_session_url, method: 'delete' do %>
+        <b>Sign out</b>
+      <% end %>
+    </p>
+    <% end %>
+  </header>
+</section>

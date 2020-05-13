@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GhostTrain</title>
+    <title>
+      <%- if content_for? :title %>
+        <%= yield :title %> -
+      <% end %>
+      GhostTrain
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :sup, msg, class: name %>
+      <% end -%>
+
+      <nav>
+        <a href="javascript:history.back()">
+          &larr; Back
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <%- if notice.present? %>
+        <sup><%= notice %></sup>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
