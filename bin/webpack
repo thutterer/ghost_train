@@ -16,3 +16,5 @@ APP_ROOT = File.expand_path("..", __dir__)
 Dir.chdir(APP_ROOT) do
   Webpacker::WebpackRunner.run(ARGV)
 end
+
+# TOD: remove duplication (or move the whole Rails folder up to gem root???)

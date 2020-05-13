@@ -1,0 +1,17 @@
+<section>
+  <header>
+    <h1>Welcome aboard the Ghost Train</h1>
+
+    <p><b>No dependency management, no config,</b> just your <em>application</em> logic and <mark>you're done</mark>.</p>
+    <br>
+    <p>
+      <%- if current_user %>
+        <%= current_user.email %>
+      <%- else %>
+        <%= link_to new_user_session_url do %>
+          <em>Sign in</em>
+        <% end %>
+      <% end %>
+    </p>
+  </header>
+</section>
