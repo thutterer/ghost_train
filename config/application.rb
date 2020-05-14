@@ -10,7 +10,6 @@ require "pg"
 require "sass-rails"
 require "sprockets" if Rails.env.development?
 require "devise"
-require "webpacker"
 require "turbolinks"
 
 module GhostRails
