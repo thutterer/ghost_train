@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -27,14 +27,20 @@
         <a href="javascript:history.back()">
           &larr; Back
         </a>
+
+        <ul>
+          <li>
+            <%- if current_user %>
+              <%= link_to current_user.email, main_app.account_url %>
+            <%- elsif defined? main_app.new_user_session_url %>
+              <%= link_to "Log In", main_app.new_user_session_url %>
+            <% end %>
+          </li>
+        </ul>
       </nav>
     </header>
 
     <main>
-      <%- if notice.present? %>
-        <sup><%= notice %></sup>
-      <% end %>
-
       <%= yield %>
     </main>
   </body>
