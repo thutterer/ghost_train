@@ -7,6 +7,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 require "puma"
 require "pg"
+require "mongoid"
 require "sass-rails"
 require "sprockets" if Rails.env.development?
 require "devise"

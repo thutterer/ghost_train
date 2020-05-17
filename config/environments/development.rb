@@ -42,6 +42,10 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+  # Don't log debug information in development
+  # Mongoid inherits this config and logs like crazy in :debug mode
+  config.log_level = :info
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
@@ -52,10 +56,6 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
-  # TODO: I only added this to postpone making Sprockets 4 manifest files play
-  # nice with engines the way I currently try to use them.
-  config.assets.check_precompiled_asset = false
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true

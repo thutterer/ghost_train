@@ -14,6 +14,22 @@
  *= require_self
  */
 
+@use "sass:color";
+
+:root {
+  --color: #{scale-color(#b1cc33, $lightness: -20%, $saturation: +20%)};
+  --color-secondary: #{scale-color(#92d3f5, $lightness: -30%, $saturation: +40%)};
+}
+
+html {
+  overflow-y: scroll;
+  font-size: 1.1em;
+}
+
+body, section, header, main, footer {
+  padding-top: 0 !important;
+}
+
 aside > p > a {
   width: 100%;
 }
@@ -25,6 +41,7 @@ textarea {
 
 textarea {
   resize: vertical;
+  height: 10rem;
 }
 
 sup {
@@ -35,6 +52,9 @@ form {
   width: var(--width-card-wide);
 }
 
+nav {
+  margin-bottom: 0;
+}
 
 #notice {
   color: var(--color);

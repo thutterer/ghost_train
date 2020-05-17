@@ -12,7 +12,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -29,9 +28,12 @@
         </a>
 
         <ul>
+          <%- if current_user&.admin? %>
+            <li><%= link_to "Admin", "/admin" %></li>
+          <% end %>
           <li>
             <%- if current_user %>
-              <%= link_to current_user.email, main_app.account_url %>
+              <%= link_to_if action_name != "account", "My account", main_app.account_url %>
             <%- elsif defined? main_app.new_user_session_url %>
               <%= link_to "Log In", main_app.new_user_session_url %>
             <% end %>
@@ -41,6 +43,12 @@
     </header>
 
     <main>
+      <section>
+        <header>
+          <h1><%= yield :title %></h1>
+        </header>
+      </section>
+
       <%= yield %>
     </main>
   </body>
