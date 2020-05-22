@@ -17,39 +17,6 @@
   </head>
 
   <body>
-    <header>
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :sup, msg, class: name %>
-      <% end -%>
-
-      <nav>
-        <a href="javascript:history.back()">
-          &larr; Back
-        </a>
-
-        <ul>
-          <%- if current_user&.admin? %>
-            <li><%= link_to "Admin", "/admin" %></li>
-          <% end %>
-          <li>
-            <%- if current_user %>
-              <%= link_to_if action_name != "account", "My account", main_app.account_url %>
-            <%- elsif defined? main_app.new_user_session_url %>
-              <%= link_to "Log In", main_app.new_user_session_url %>
-            <% end %>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section>
-        <header>
-          <h1><%= yield :title %></h1>
-        </header>
-      </section>
-
-      <%= yield %>
-    </main>
+    <%= render template: "layouts/front/application" %>
   </body>
 </html>
