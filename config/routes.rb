@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "front/application#welcome"
+
   devise_for :users
 
   get "/account", to: "application#account"
