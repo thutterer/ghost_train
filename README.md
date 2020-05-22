@@ -1,13 +1,23 @@
+# how the install command will work
+
+> $ ghost_train new foo
+
+- creates a `foo` folder
+- inside is - directly - the "front" engine, so there is a `foo/app` and so on
+- also `foo/Gemfile` is ready and requires the current folder (as the "front" engine)
+- not sure if that flies, but sounds like a great idea ;)
+
+
 # Ghost train
 
 > _All aboard!_
 
-Have you ever noticed how short after the exitement of a `rails new` you always have to do the same basic things all over again? User authentication, authorization, administration, database configuration, preparation, migrations and schema. To just name a few.
+Have you ever noticed how short after the excitement of a `rails new` you always have to do the same basic things all over again? User authentication, authorization, administration, database configuration, preparation, migrations and schema. To just name a few.
 The moment you create a new Rails app, you pretty much duplicate a few dozens files you had, or wished to have, like this already in all your other Rails apps.
 
 _That's not very DRY, is it?_
 
-Here comes the Ghost train. It's a zero-conf, minimal-maintenance Rails in a box, basically.
+Here comes the Ghost train. It's a zero-conf, minimal-maintenance Rails-in-a-box, basically.
 
 _This project including this README is still pre-release, by the way. If something is unclear or not working as described, please open an issue so we can fix that :)_
 
@@ -36,8 +46,8 @@ Ghost train not only installs the latest Rails in your bundle, but comes with th
 - [Devise](https://github.com/heartcombo/devise) for user authentication
 - [Administrate](https://github.com/thoughtbot/administrate) for user administration
 - _Soon:_ Ahoy for analytic data
-- ActiveRecord configured to use PostgreSQL, ready with migrations and schema.
-- MongoDB for all your application data.
+- ActiveRecord (using `pg`), ready with migrations and schema.
+- [Mongoid](https://github.com/mongodb/mongoid) for all your application data.
 
 ### Concept
 
@@ -45,7 +55,7 @@ Where Rails itself aims for _[Convention over configuration](https://en.wikipedi
 
 - No database migrations. No custom schema. ActiveRecord is only used to manage some core functionality of your application.
 - Actually, all files that you would normally find in your application's root folder are packaged away in the ghost_train gem. Out of sight, out of mind. Yes, read-only Rails!
-- All you have to do is write an awesome Rails _engine_!
+- All you have to do is write an awesome Rails [_engine_](https://guides.rubyonrails.org/engines.html)!
 - As it always was, you can add additional gems into your `Gemfile` and have a custom `routes.rb`.
 - Ready to deploy!
 
