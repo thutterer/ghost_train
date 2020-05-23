@@ -1,3 +1,3 @@
 //= require rails-ujs
 //= require turbolinks
-//= require front/application.js
+//= require front/application
