@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>
       <%- if content_for? :title %>
@@ -11,11 +11,23 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel='manifest' href='/manifest.json'>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+
+    <meta name="Description" content="<%= Front.config[:description] %>">
+    <meta name="theme-color" content="<%= Front.config[:theme_color] %>"/>
   </head>
 
   <body>
     <%= render template: "layouts/front/application" %>
+
+    <script type="text/javascript">
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("/service-worker.js", { scope: "/" })
+      }
+    </script>
   </body>
 </html>
