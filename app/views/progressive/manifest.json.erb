@@ -7,17 +7,17 @@
 	"start_url" : "<%= main_app.start_url %>",
 	"short_name" : "<%= Front.config[:short_name] %>",
 	"theme_color" : "<%= Front.config[:theme_color] %>",
+	"background_color" : "<%= Front.config[:background_color] %>",
 	"description" : "<%= Front.config[:description] %>",
 	"orientation" : "portrait",
-	"background_color" : "white",
 	"icons" : [
 		{
-			"source": "<%= asset_path('front/logo_192.png') %>",
+			"src": "<%= asset_url('front/logo_192.png') %>",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"source": "<%= asset_path('front/logo_512.png') %>",
+			"src": "<%= asset_url('front/logo_512.png') %>",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
