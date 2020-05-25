@@ -2,6 +2,7 @@ class ProgressiveController < ActionController::Base
   protect_from_forgery except: :service_worker
 
   def manifest; end
+
   def offline; end
 
   def service_worker
@@ -9,4 +10,6 @@ class ProgressiveController < ActionController::Base
       format.js
     end
   end
+
+  def start; end
 end

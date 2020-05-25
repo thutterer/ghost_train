@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      <%- if content_for? :title %>
-        <%= yield :title %>
-      <% end %>
-    </title>
+    <title><%= yield(:title) if content_for?(:title) %></title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel='manifest' href='/manifest.json'>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -19,6 +14,7 @@
 
     <meta name="Description" content="<%= Front.config[:description] %>">
     <meta name="theme-color" content="<%= Front.config[:theme_color] %>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
