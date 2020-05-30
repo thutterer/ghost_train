@@ -14,6 +14,7 @@ require "devise"
 require "turbolinks"
 require "administrate"
 require "pundit"
+require "ahoy"
 
 module GhostRails
   class Application < Rails::Application
