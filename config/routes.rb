@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
+  authenticate :user, ->(user) { user.admin? } do
+    mount Blazer::Engine, at: "blazer"
+  end
+
   mount Front::Engine, at: "/"
 end

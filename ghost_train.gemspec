@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "administrate"
   s.add_runtime_dependency "pundit", "~> 2.1"
   s.add_runtime_dependency "ahoy_matey", "~> 3.0"
+  s.add_runtime_dependency "blazer", "~> 2.2"
 end
