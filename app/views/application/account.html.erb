@@ -15,12 +15,14 @@
 
     <%- if current_user %>
     <p>
-      <%= link_to edit_user_registration_url do %>
+      <% if false %>
+      <%= link_to_if false, edit_user_registration_url do %>
         <em>Change email</em>
       <% end %>
 
       <%= link_to edit_user_password_url do %>
         <em>Change password</em>
+      <% end %>
       <% end %>
 
       <%= link_to destroy_user_session_url, method: 'delete' do %>
