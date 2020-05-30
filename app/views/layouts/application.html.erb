@@ -12,9 +12,24 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
 
-    <meta name="Description" content="<%= Front.config[:description] %>">
-    <meta name="theme-color" content="<%= Front.config[:theme_color] %>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="<%= Front.config[:name] %>">
+    <meta name="description" content="<%= Front.config[:description] %>">
+    <meta name="theme-color" content="<%= Front.config[:theme_color] %>"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= main_app.root_url %>">
+    <meta property="og:title" content="<%= yield :title %>">
+    <meta property="og:description" content="<%= Front.config[:description] %>">
+    <meta property="og:image" content="<%= asset_url('front/logo_large.png') %>">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<%= main_app.root_url %>">
+    <meta property="twitter:title" content="<%= yield :title %>">
+    <meta property="twitter:description" content="<%= Front.config[:description] %>">
+    <meta property="twitter:image" content="<%= asset_url('front/logo_large.png') %>">
 
     <%= yield :head %>
   </head>
