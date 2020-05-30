@@ -31,4 +31,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "devise", "~> 4.7"
   s.add_runtime_dependency "turbolinks", "~> 5"
   s.add_runtime_dependency "administrate"
+  s.add_runtime_dependency "pundit", "~> 2.1"
 end

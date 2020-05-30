@@ -13,6 +13,7 @@ require "sprockets" if Rails.env.development?
 require "devise"
 require "turbolinks"
 require "administrate"
+require "pundit"
 
 module GhostRails
   class Application < Rails::Application
