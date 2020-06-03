@@ -16,6 +16,7 @@ require "administrate"
 require "pundit"
 require "ahoy"
 require "blazer"
+require "dalli"
 
 module GhostRails
   class Application < Rails::Application
