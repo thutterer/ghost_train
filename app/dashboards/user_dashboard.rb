@@ -26,8 +26,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   email
-  encrypted_password
-  reset_password_token
+  created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -48,10 +47,6 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
   ].freeze
 
   # COLLECTION_FILTERS

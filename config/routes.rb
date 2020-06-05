@@ -12,6 +12,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+
+    namespace :ahoy do
+      resources :events
+      resources :visits
+    end
+
     root to: "users#index"
   end
 
