@@ -42,7 +42,7 @@ Congratulations! You just installed a bunch of stuff.
 Ghost train not only installs the latest Rails in your bundle, but comes with these features out of the box:
 - [Devise](https://github.com/heartcombo/devise) for user authentication
 - [Administrate](https://github.com/thoughtbot/administrate) for user administration
-- [Ahoy](https://github.com/ankane/ahoy) for analytic data
+- [Ahoy](https://github.com/ankane/ahoy) and [Blazer](https://github.com/ankane/blazer) for analytics
 - PostgreSQL ready to go. Users, analytics, and a single table for all your jsonb `things.
 
 ### Concept
@@ -84,7 +84,9 @@ Add and commit all files.
 Remember, `ghost` is your new `rails`!
 
 ```bash
-$ ghost server
+$ # source your ENV
+$ bundle exec ghost db:migrate
+$ bundle exec ghost server
 ```
 
 ## License
