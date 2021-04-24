@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+# Create Gemfile
+gemfile_content = <<-RUBY
+source "https://rubygems.org"
+
+gem 'ghost_train', path: "/home/tom/Code/ghost_train"
+RUBY
+File.write("Gemfile", gemfile_content)
+
+# Bundle!
+system("bundle install")
+
+# Add app engine
+system("bundle exec ghost plugin new front --mountable --skip-gemfile --skip-git --no-skip-javascript --template=../ghost_train/template.rb")
+
+# (Hacky) Remove TODOs from gemspec
+system("bundle exec ghost generate ghost foo")
+
+# Add engine to Gemfile and rebundle
+File.write("Gemfile", "gem \"front\", path: \"./front\"\n", mode: "a")
+system("bundle install --quiet")
+
+# Add Rakefile
+rakefile_content = <<-RUBY
+require 'ghost_train'
+GhostTrain.call
+Rails.application.load_tasks
+RUBY
+File.write("Rakefile", rakefile_content)

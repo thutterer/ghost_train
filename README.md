@@ -24,17 +24,14 @@ _This project including this README is still pre-release, by the way. If somethi
 
 ## Installation
 
-In an otherwise empty folder, create this `Gemfile`:
-
-```ruby
-source 'https://rubygems.org'
-
-gem 'ghost_train'
+Make sure you have a recent ruby (with bundler) in your PATH:
+```
+rbenv local 3.0.1
 ```
 
-And then execute:
+Run the install script:
 ```bash
-$ bundle
+wget https://github.com/thutterer/.../raw/.../install | bash
 ```
 
 Congratulations! You just installed a bunch of stuff.
@@ -74,8 +71,21 @@ Ghost train on the other hand doesn't create any files for you. It keeps them aw
 - production deployment (heroku-ready)
 - how to mount custom engine and others
 
+### Database
+
+Setup Postgres to work with Rails. Depends on your setup.
+
+### Git
+
+Delete the `.git` folder in your Front engine. Commit those files to your main project (parent folder).
+Add and commit all files.
+
+# Run
+
+Remember, `ghost` is your new `rails`!
+
 ```bash
-$ rail s
+$ ghost server
 ```
 
 ## License

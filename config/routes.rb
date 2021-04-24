@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer"
   end
 
-  mount Front::Engine, at: "/"
+  # TODO: Try to do without rescue (in installer when engine gemspec is not patched yet)
+  mount(Front::Engine, at: "/") rescue nil
 end
