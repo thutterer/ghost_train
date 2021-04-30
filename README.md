@@ -42,15 +42,14 @@ Congratulations! You just installed a bunch of stuff.
 Ghost train not only installs the latest Rails in your bundle, but comes with these features out of the box:
 - [Devise](https://github.com/heartcombo/devise) for user authentication
 - [Administrate](https://github.com/thoughtbot/administrate) for user administration
-- _Soon:_ Ahoy for analytic data
-- ActiveRecord (using `pg`), ready with migrations and schema.
-- [Mongoid](https://github.com/mongodb/mongoid) for all your application data.
+- [Ahoy](https://github.com/ankane/ahoy) for analytic data
+- PostgreSQL ready to go. Users, analytics, and a single table for all your jsonb `things.
 
 ### Concept
 
 Where Rails itself aims for _[Convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration)_, Ghost train aims to eliminate all configuration. This means:
 
-- No database migrations. No custom schema. ActiveRecord is only used to manage some core functionality of your application.
+- No database migrations. No custom schema. ActiveRecord is ready for devise, ahoy and all your `things`, using jsonb.
 - Actually, all files that you would normally find in your application's root folder are packaged away in the ghost_train gem. Out of sight, out of mind. Yes, read-only Rails!
 - All you have to do is write an awesome Rails [_engine_](https://guides.rubyonrails.org/engines.html)!
 - As it always was, you can add additional gems into your `Gemfile` and have a custom `routes.rb`.

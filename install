@@ -28,3 +28,9 @@ GhostTrain.call
 Rails.application.load_tasks
 RUBY
 File.write("Rakefile", rakefile_content)
+
+# Add Procfile
+procfile_content = <<-RUBY
+web: bundle exec ghost server
+RUBY
+File.write("Procfile", procfile_content)
