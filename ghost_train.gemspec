@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   }
 
   s.add_runtime_dependency "rails", "~> 6.1"
-  s.add_runtime_dependency "puma", "~> 4.1"
+  s.add_runtime_dependency "puma", "~> 5.2"
   s.add_runtime_dependency "bootsnap", "~> 1.4", ">= 1.4.2"
   s.add_runtime_dependency "pg", "~> 1.2"
   s.add_runtime_dependency "mongoid", "~> 7.0.5"
