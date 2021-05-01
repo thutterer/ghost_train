@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
     "source_code_uri"   => "https://github.com/thutterer/ghost_train/tree/v#{version}",
   }
 
-  s.add_runtime_dependency "rails", "~> 6.0"
+  s.add_runtime_dependency "rails", "~> 6.1"
   s.add_runtime_dependency "puma", "~> 4.1"
   s.add_runtime_dependency "bootsnap", "~> 1.4", ">= 1.4.2"
   s.add_runtime_dependency "pg", "~> 1.2"

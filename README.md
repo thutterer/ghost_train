@@ -85,7 +85,7 @@ Remember, `ghost` is your new `rails`!
 
 ```bash
 $ # source your ENV
-$ bundle exec ghost db:migrate
+$ bundle exec ghost db:create db:migrate
 $ bundle exec ghost server
 ```
 

@@ -3,10 +3,13 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
+# TODO: set custom database names (from app name) in all envs!
+# Otherwise two apps on the same dev machine, or possibly production cluster,
+# would write to the same database.
+
 development:
   <<: *default
   database: my_database_development
-
 test:
   <<: *default
   database: my_database_test

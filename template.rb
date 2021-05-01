@@ -18,8 +18,12 @@ end
 
 def add_welcome
   route 'get "home" => "application#welcome"'
-    
-  insert_into_file 'app/controllers/front/application_controller.rb', "layout \"application\"\n\ndef welcome; end", after: "class ApplicationController < ActionController::Base\n"
+
+  insert_into_file(
+    'app/controllers/front/application_controller.rb',
+    "    layout \"application\"\n\n    def welcome; end\n",
+    after: "class ApplicationController < ActionController::Base\n"
+  )
 
   welcome = <<-HTML
 <header>
@@ -33,6 +37,9 @@ def add_welcome
 end
 
 def add_logos
+  create_file 'app/assets/images/front/apple-touch-icon.png'
+  create_file 'app/assets/images/front/favicon-16x16.png'
+  create_file 'app/assets/images/front/favicon-32x32.png'
   create_file 'app/assets/images/front/logo_192.png'
   create_file 'app/assets/images/front/logo_512.png'
   create_file 'app/assets/images/front/logo_large.png'
@@ -48,9 +55,10 @@ def add_helpers
       "front"
     end
   RUBY
-  
+
   insert_into_file 'app/helpers/front/application_helper.rb', engine_name, after: "module ApplicationHelper\n"
 end
+
 # Main setup
 add_welcome
 add_logos
