@@ -11,7 +11,7 @@ require "mongoid"
 require "sass-rails"
 require "sprockets" if Rails.env.development?
 require "devise"
-require "turbolinks"
+require "turbo-rails"
 require "administrate"
 require "pundit"
 require "ahoy"

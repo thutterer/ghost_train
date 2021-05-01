@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "mongoid", "~> 7.0.5"
   s.add_runtime_dependency "sass-rails", "~> 6.0"
   s.add_runtime_dependency "devise", "~> 4.7"
-  s.add_runtime_dependency "turbolinks", "~> 5"
+  s.add_runtime_dependency "turbo-rails"
   s.add_runtime_dependency "administrate"
   s.add_runtime_dependency "pundit", "~> 2.1"
   s.add_runtime_dependency "ahoy_matey", "~> 3.0"
