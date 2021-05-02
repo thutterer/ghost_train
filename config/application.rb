@@ -7,7 +7,6 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 require "puma"
 require "pg"
-require "mongoid"
 require "sass-rails"
 require "sprockets" if Rails.env.development?
 require "devise"
@@ -17,6 +16,7 @@ require "pundit"
 require "ahoy"
 require "blazer"
 require "dalli"
+require "redis"
 
 module GhostRails
   class Application < Rails::Application

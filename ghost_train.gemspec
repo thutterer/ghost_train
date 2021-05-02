@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "puma", "~> 5.2"
   s.add_runtime_dependency "bootsnap", "~> 1.4", ">= 1.4.2"
   s.add_runtime_dependency "pg", "~> 1.2"
-  s.add_runtime_dependency "mongoid", "~> 7.0.5"
   s.add_runtime_dependency "sass-rails", "~> 6.0"
   s.add_runtime_dependency "devise", "~> 4.7"
   s.add_runtime_dependency "turbo-rails"
@@ -35,4 +34,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "ahoy_matey", "~> 3.0"
   s.add_runtime_dependency "blazer", "~> 2.2"
   s.add_runtime_dependency "dalli", ">= 2.7.10"
+  s.add_runtime_dependency "redis", "~> 4.2"
 end
