@@ -1,4 +1,6 @@
 class Thing < ApplicationRecord
+  include Discard::Model
+
   belongs_to :user, optional: true
 
   before_create do

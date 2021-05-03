@@ -16,6 +16,7 @@ require "pundit"
 require "ahoy"
 require "blazer"
 require "dalli"
+require "discard"
 require "redis"
 
 module GhostRails

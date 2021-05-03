@@ -34,5 +34,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "ahoy_matey", "~> 3.0"
   s.add_runtime_dependency "blazer", "~> 2.2"
   s.add_runtime_dependency "dalli", ">= 2.7.10"
+  s.add_runtime_dependency "discard", "~> 1.2"
   s.add_runtime_dependency "redis", "~> 4.2"
 end
