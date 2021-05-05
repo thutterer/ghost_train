@@ -3,8 +3,9 @@
 # Create Gemfile
 gemfile_content = <<-RUBY
 source "https://rubygems.org"
+ruby "2.7.3"
 
-gem "ghost_train", path: "/home/tom/Code/ghost_train"
+gem "ghost_train"
 RUBY
 File.write("Gemfile", gemfile_content)
 
