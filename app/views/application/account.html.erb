@@ -4,25 +4,19 @@
 
 <section>
   <header>
-    <p>
-      <%- if current_user %>
-        <%= current_user.email %>
+    <h1>
+      <%= current_user.email %>
+    </h1>
 
-      <%- elsif defined? new_user_session_url %>
-        <%= link_to "Sign In", new_user_session_url %>
+    <%- if current_user.admin? %>
+      <%= link_to "/admin" do %>
+        <em>Admin</em>
       <% end %>
-    </p>
-
-    <%- if current_user %>
-      <%- if current_user.admin? %>
-        <%= link_to "/admin" do %>
-          <em>Admin</em>
-        <% end %>
-        <br>
-        <%= link_to "/blazer" do %>
-          <em>Analytics</em>
-        <% end %>
+      <br>
+      <%= link_to "/blazer" do %>
+        <em>Analytics</em>
       <% end %>
+    <% end %>
     <p>
       <% if false %>
       <%= link_to_if false, edit_user_registration_url do %>
@@ -38,6 +32,5 @@
         <b>Sign out</b>
       <% end %>
     </p>
-    <% end %>
   </header>
 </section>
