@@ -16,21 +16,14 @@
       <%= link_to "/blazer" do %>
         <em>Analytics</em>
       <% end %>
+      <br>
     <% end %>
-    <p>
-      <% if false %>
-      <%= link_to_if false, edit_user_registration_url do %>
-        <em>Change email</em>
-      <% end %>
-
-      <%= link_to edit_user_password_url do %>
-        <em>Change password</em>
-      <% end %>
-      <% end %>
-
-      <%= link_to destroy_user_session_url, method: 'delete' do %>
-        <b>Sign out</b>
-      <% end %>
-    </p>
+    <%= link_to edit_user_registration_url do %>
+      <em>Edit settings</em>
+    <% end %>
+    <br>
+    <%= link_to destroy_user_session_url, method: 'delete' do %>
+      <b>Sign out</b>
+    <% end %>
   </header>
 </section>
