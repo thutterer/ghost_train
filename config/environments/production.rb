@@ -72,6 +72,19 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Use mailgun.com as SMTP server
+  if Front.config[:domain]
+    config.action_mailer.smtp_settings = {
+      :port           => ENV["MAILGUN_SMTP_PORT"],
+      :address        => ENV["MAILGUN_SMTP_SERVER"],
+      :user_name      => ENV["MAILGUN_SMTP_LOGIN"],
+      :password       => ENV["MAILGUN_SMTP_PASSWORD"],
+      :domain         => Front.config[:domain],
+      :authentication => :plain,
+    }
+    config.action_mailer.delivery_method = :smtp
+  end
+
   # TODO: Devise needs this!
   # config.action_mailer.default_url_options = { host: 'host', port: 555 }
 
