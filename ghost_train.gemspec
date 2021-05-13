@@ -37,4 +37,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "discard", "~> 1.2"
   s.add_runtime_dependency "redis", "~> 4.2"
   s.add_runtime_dependency "letter_opener", "~> 1.7"
+  s.add_runtime_dependency "image_processing", "~> 1.0"
 end

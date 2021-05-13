@@ -37,12 +37,7 @@ def add_welcome
 end
 
 def add_logos
-  create_file 'app/assets/images/front/apple-touch-icon.png'
-  create_file 'app/assets/images/front/favicon-16x16.png'
-  create_file 'app/assets/images/front/favicon-32x32.png'
-  create_file 'app/assets/images/front/logo_192.png'
-  create_file 'app/assets/images/front/logo_512.png'
-  create_file 'app/assets/images/front/logo_large.png'
+  # TODO: call rake task
 end
 
 def fix_javascript
