@@ -11,3 +11,4 @@
 //= link front/favicon-32x32.png
 //= link front/favicon-16x16.png
 //= link_tree ../images
+//= link_tree ../javascripts

@@ -10,7 +10,7 @@ require "pg"
 require "sass-rails"
 require "sprockets" if Rails.env.development?
 require "devise"
-require "turbo-rails"
+require "hotwire-rails"
 require "administrate"
 require "pundit"
 require "ahoy"

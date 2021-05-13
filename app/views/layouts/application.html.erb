@@ -13,7 +13,6 @@
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", async: true %>
-    <%= turbo_include_tags %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="<%= Front.config[:name] %>">
@@ -35,6 +34,8 @@
     <meta property="twitter:image" content="<%= asset_url('front/logo_large.png') %>">
 
     <%= yield :head %>
+    <%= stimulus_include_tags %>
+    <%= javascript_include_tag "turbo", type: "module-shim" %>
   </head>
 
   <body>
