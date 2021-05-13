@@ -36,4 +36,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "dalli", ">= 2.7.10"
   s.add_runtime_dependency "discard", "~> 1.2"
   s.add_runtime_dependency "redis", "~> 4.2"
+  s.add_runtime_dependency "letter_opener", "~> 1.7"
 end

@@ -18,6 +18,7 @@ require "blazer"
 require "dalli"
 require "discard"
 require "redis"
+require "letter_opener" if Rails.env.development?
 
 module GhostRails
   class Application < Rails::Application
