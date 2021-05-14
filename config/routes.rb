@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get "/account", to: "application#account"
+  resource :account, only: [:show, :update]
 
   namespace :admin do
     resources :users

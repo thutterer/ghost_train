@@ -8,6 +8,12 @@
       <%= current_user.email %>
     </h1>
 
+    <%= form_with(model: current_user, url: account_url) do |f| %>
+      <%= f.text_field :first_name, readonly: true, placeholder: "First name" %>
+      <%= f.text_field :last_name, readonly: true, placeholder: "Last name" %>
+      <%= f.submit disabled: true, title: "Coming soon." %>
+    <% end %>
+
     <%- if current_user.admin? %>
       <%= link_to "/admin" do %>
         <em>Admin</em>

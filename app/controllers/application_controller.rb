@@ -8,8 +8,4 @@ class ApplicationController < ActionController::Base
   rescue_from 'Pundit::NotAuthorizedError' do |exception|
     render 'not_authorized', status: :unauthorized
   end
-
-  def account
-    authorize :application, :account?
-  end
 end
