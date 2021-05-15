@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "start" => "progressive#start"
   root "progressive#start"
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/sessions"
+  }
 
   resource :account, only: [:show, :update]
 
