@@ -89,5 +89,9 @@ $ bundle exec ghost db:create db:migrate
 $ bundle exec ghost server
 ```
 
+## Blazer
+
+For Blazer to work you have to configure a `BLAZER_DATABASE_URL` env var. See https://github.com/ankane/blazer#installation for details.
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
