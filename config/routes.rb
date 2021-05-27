@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get "manifest.json" => "progressive#manifest"
   get "offline" => "progressive#offline"
   get "service-worker.js" => "progressive#service_worker"
-  get "start" => "progressive#start"
   root "progressive#start"
 
   devise_for :users, controllers: {
