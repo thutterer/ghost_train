@@ -41,6 +41,8 @@
   <body>
     <%= render template: "layouts/front/application" %>
 
+    <dialog id="modalDialog" onClick="if(event.target == this) this.close()"></dialog>
+
     <script type="text/javascript">
       if (navigator.serviceWorker) {
         navigator.serviceWorker.register("/service-worker.js", { scope: "/" })
