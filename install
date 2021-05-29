@@ -5,7 +5,7 @@ gemfile_content = <<-RUBY
 source "https://rubygems.org"
 ruby "2.7.3"
 
-gem "ghost_train"
+gem "ghost_train", github: "thutterer/ghost_train"
 RUBY
 File.write("Gemfile", gemfile_content)
 
@@ -13,7 +13,7 @@ File.write("Gemfile", gemfile_content)
 system("bundle install")
 
 # Add app engine
-system("bundle exec ghost plugin new front --mountable --skip-gemfile --skip-git --no-skip-javascript --template=../ghost_train/template.rb")
+system("bundle exec ghost plugin new front --mountable --skip-gemfile --skip-git --no-skip-javascript --template=https://raw.githubusercontent.com/thutterer/ghost_train/master/template.rb")
 
 # (Hacky) Remove TODOs from gemspec
 system("bundle exec ghost generate ghost foo")
@@ -35,3 +35,6 @@ procfile_content = <<-RUBY
 web: bundle exec ghost server
 RUBY
 File.write("Procfile", procfile_content)
+
+# Generate logos
+system("bundle exec ghost logos:generate")

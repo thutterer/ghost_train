@@ -1,13 +1,3 @@
-# how the install command will work
-
-> $ ghost_train new foo
-
-- creates a `foo` folder
-- inside is - directly - the "front" engine, so there is a `foo/app` and so on
-- also `foo/Gemfile` is ready and requires the current folder (as the "front" engine)
-- not sure if that flies, but sounds like a great idea ;)
-
-
 # Ghost train
 
 > _All aboard!_
@@ -24,14 +14,12 @@ _This project including this README is still pre-release, by the way. If somethi
 
 ## Installation
 
-Make sure you have a recent ruby (with bundler) in your PATH:
-```
-rbenv local 3.0.1
-```
+The install script will install Rails and a ton of other gems, so before you run it, make sure you are in a new empty folder and have your ruby version manager ready for a new project, using ruby 2.7.
 
 Run the install script:
 ```bash
-wget https://github.com/thutterer/.../raw/.../install | bash
+# Run this in an empty folder, with ruby 2.7.3 in your path
+curl https://raw.githubusercontent.com/thutterer/ghost_train/master/install | ruby
 ```
 
 Congratulations! You just installed a bunch of stuff.
@@ -43,13 +31,13 @@ Ghost train not only installs the latest Rails in your bundle, but comes with th
 - [Devise](https://github.com/heartcombo/devise) for user authentication
 - [Administrate](https://github.com/thoughtbot/administrate) for user administration
 - [Ahoy](https://github.com/ankane/ahoy) and [Blazer](https://github.com/ankane/blazer) for analytics
-- PostgreSQL ready to go. Users, analytics, and a single table for all your jsonb `things.
+- PostgreSQL ready to go. Users, analytics, and a single table for all your JSONB data.
 
 ### Concept
 
 Where Rails itself aims for _[Convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration)_, Ghost train aims to eliminate all configuration. This means:
 
-- No database migrations. No custom schema. ActiveRecord is ready for devise, ahoy and all your `things`, using jsonb.
+- No database migrations. No custom schema. ActiveRecord is ready for devise, ahoy and all your `things`, using JSONB.
 - Actually, all files that you would normally find in your application's root folder are packaged away in the ghost_train gem. Out of sight, out of mind. Yes, read-only Rails!
 - All you have to do is write an awesome Rails [_engine_](https://guides.rubyonrails.org/engines.html)!
 - As it always was, you can add additional gems into your `Gemfile` and have a custom `routes.rb`.
@@ -63,12 +51,6 @@ Ghost train on the other hand doesn't create any files for you. It keeps them aw
 
 
 ## First steps
-
-#### TODO: These sections are still missing, sorry:
-
-- local setup for dev/test
-- production deployment (heroku-ready)
-- how to mount custom engine and others
 
 ### Database
 

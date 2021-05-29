@@ -1,9 +1,8 @@
 /* MVP.css v1.7.3 - https://github.com/andybrewer/mvp */
 
 :root {
-    --border-radius:5px;
-    --box-shadow:2px 2px 10px;
-    --color-accent:#118bee15;
+    --border-radius: <%= Front.config[:border_radius] || "5px" %>;
+    --box-shadow: 2px 2px 10px;
     --font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --hover-brightness:1.2;
     --justify-important:center;
@@ -16,15 +15,15 @@
   }
 
 :root {
-    --color: <%= Front.config[:theme_color] %>;
-    --color-accent: #0097fc4f;
-    --color-bg: <%= Front.config[:background_color] %>;
+    --color: <%= Front.config[:theme_color] || "#8338ec" %>;
+    --color-accent: <%= Front.config[:accent_color] || "#118bee15" %>;
+    --color-bg: <%= Front.config[:background_color] || "#fff" %>;
     --color-bg-secondary: #454545;
     --color-secondary: #e7bfad;
     --color-secondary-accent: #e20de94f;
     --color-shadow: #222;
-    --color-text: <%= Front.config[:text_color] || "#f7f7f7" %>;
-    --color-text-secondary: #aaa;
+    --color-text: <%= Front.config[:text_color] || "#000" %>;
+    --color-text-secondary: <%= Front.config[:secondary_text_color] || "#999" %>;
 }
 
   /* Layout */
