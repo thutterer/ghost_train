@@ -6,7 +6,7 @@ namespace :logos do
     svg = <<-SVG
       <svg width="512" height="512">
         <rect x="24" y="24" width="464" height="464" rx="32" ry="32" fill="#{Front.config[:theme_color]}" stroke="none"/>
-        <text x="50%" y="75%" dominant-baseline="middle" text-anchor="middle"
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
           fill="#{Front.config[:background_color]}"
           style="font-size: 384px; font-weight: bold;">
           #{Front.config[:name][0]}
@@ -18,7 +18,7 @@ namespace :logos do
     tempfile.write(svg)
     tempfile.rewind
 
-    dir = "./front/app/assets/images/front"
+    dir = "./app/assets/images/front"
     [16, 32, 180, 192, 512].each do |size|
       processed = ImageProcessing::MiniMagick
       .source(tempfile.path)
@@ -38,7 +38,7 @@ namespace :logos do
 
     [16, 32, 192, 512].each do |size|
       processed = ImageProcessing::MiniMagick
-      .source("./front/app/assets/images/front/logo.svg")
+      .source("./app/assets/images/front/logo.svg")
       .resize_to_limit(size, size)
       # .fuzz("5%")
       # TODO: Improve transparency
@@ -46,7 +46,7 @@ namespace :logos do
       .transparent("rgba(0,0,0,0)")
       .background("rgba(0,0,0,0)")
       .convert("png")
-      .call destination: "./front/app/assets/images/front/logo_#{size}.png"
+      .call destination: "./app/assets/images/front/logo_#{size}.png"
     end
 
     puts "Done."
