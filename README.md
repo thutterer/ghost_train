@@ -18,7 +18,6 @@ The install script will install Rails and a ton of other gems, so before you run
 
 Run the install script:
 ```bash
-# Run this in an empty folder, with ruby 2.7.3 in your path
 curl https://raw.githubusercontent.com/thutterer/ghost_train/master/install | ruby
 ```
 

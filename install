@@ -1,5 +1,18 @@
 #!/usr/bin/env ruby
 
+# Make sure folder is empty
+if (`ls -a`.split("\n") - ['.', '..']).length > 0
+  abort "Folder is not empty. Try again in a new empty folder."
+end
+
+# Suggest to init a git repo
+NO_REPO = 128
+system("git status")
+if $?.exitstatus == NO_REPO
+  print "Do you want to init a new git repo? [Yn] "
+  system("git init") if gets != "n"
+end
+
 # Create Gemfile
 gemfile_content = <<-RUBY
 source "https://rubygems.org"
@@ -13,7 +26,7 @@ File.write("Gemfile", gemfile_content)
 system("bundle install")
 
 # Add app engine
-system("bundle exec ghost plugin new front --mountable --skip-gemfile --skip-git --no-skip-javascript --no-full --template=https://raw.githubusercontent.com/thutterer/ghost_train/master/template.rb")
+system("bundle exec ghost plugin new front --mountable --skip-gemfile --skip-git --skip-test --skip-keeps --no-skip-javascript --template=https://raw.githubusercontent.com/thutterer/ghost_train/master/template.rb")
 
 # Move engine up into root folder
 system("mv front/* .; rmdir front")
@@ -23,6 +36,7 @@ system("rm MIT-LICENSE")
 
 # (Hacky) Remove TODOs from gemspec
 system("bundle exec ghost generate ghost foo")
+# TODO: Use git author and email in gemspec
 
 # Add engine to Gemfile and rebundle
 File.write("Gemfile", "gem \"front\", path: \".\"\n", mode: "a")
@@ -42,5 +56,28 @@ web: bundle exec ghost server
 RUBY
 File.write("Procfile", procfile_content)
 
+# Add README.md
+readme_content = <<-MD
+# README
+
+Use `ghost` instead of `rails` on the command line, like:
+
+```bash
+bundle exec ghost db:migrate
+bundle exec ghost server
+bundle exec ghost routes
+```
+
+MD
+File.write("README.md", readme_content)
+
 # Generate logos
 system("bundle exec ghost logos:generate")
+
+# Commit changes
+OK = 0
+system("git status")
+if $?.exitstatus == OK
+  print "Do you want to commit the changes? [Yn] "
+  system("git add .; git commit -m 'Create new app'") if gets != "n"
+end
