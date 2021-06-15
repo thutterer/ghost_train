@@ -18,7 +18,7 @@ gemfile_content = <<-RUBY
 source "https://rubygems.org"
 ruby "2.7.3"
 
-gem "ghost_train", github: "thutterer/ghost_train", branch: "lvlup"
+gem "ghost_train", github: "thutterer/ghost_train"
 RUBY
 File.write("Gemfile", gemfile_content)
 
