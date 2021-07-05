@@ -10,6 +10,5 @@
 //= link front/logo_192.png
 //= link front/logo_512.png
 //= link front/logo_large.png
-//= link front/apple-touch-icon.png
 //= link_tree ../images
 //= link_tree ../javascripts
