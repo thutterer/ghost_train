@@ -1,7 +1,8 @@
 //= require polyfills/dialog-polyfill
 
+dialog = undefined // global for easy access in SJR
+
 function installPolyfills () {
-  // Set global `dialog` variable for easy access in SJR
   dialog = document.querySelector('dialog')
   dialogPolyfill.registerDialog(dialog)
 }
