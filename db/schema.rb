@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_14_201725) do
+ActiveRecord::Schema.define(version: 2021_07_06_164634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,16 @@ ActiveRecord::Schema.define(version: 2021_05_14_201725) do
     t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
   end
 
+  create_table "relations", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "list_id"
+    t.string "kind"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_relations_on_item_id"
+    t.index ["list_id"], name: "index_relations_on_list_id"
+  end
+
   create_table "things", force: :cascade do |t|
     t.integer "user_id"
     t.jsonb "data", default: {}, null: false
@@ -141,4 +151,6 @@ ActiveRecord::Schema.define(version: 2021_05_14_201725) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "relations", "things", column: "item_id"
+  add_foreign_key "relations", "things", column: "list_id"
 end
